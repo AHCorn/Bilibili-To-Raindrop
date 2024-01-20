@@ -66,7 +66,7 @@ If you do not need the automatic filtering feature, simply delete the if title p
 
 If the refresh is too fast and causes issues, adjust the waiting duration to 1000.
 
-### ❤️ Thanks
+## ❤️ Thanks
 The original fetching code comes from [快速导出B站收藏单节目列表 - 鱼肉真好吃](https://www.cnblogs.com/toumingbai/p/11399238.html). 
 
 This script has been optimized for use cases involving export to Raindrop.
