@@ -108,4 +108,8 @@ changeList();
 如果出现刷新过快导致的问题，请将等待时常长修改为1000即可。
 
 ## ❤️ 感谢
-原始获取代码来自于 [快速导出B站收藏单节目列表 - 鱼肉真好吃](https://www.cnblogs.com/toumingbai/p/11399238.html)，遍历所有收藏夹功能的思路来自于 [BiliBackup](https://github.com/sweatran/BiliBackup?tab=readme-ov-file)，本脚本针对导出至 Raindrop 的使用场景进行了优化。
+原始获取代码来自于 [快速导出B站收藏单节目列表 - 鱼肉真好吃](https://www.cnblogs.com/toumingbai/p/11399238.html)
+
+遍历所有收藏夹部分的代码来自于 [BiliBackup](https://github.com/sweatran/BiliBackup?tab=readme-ov-file)
+
+本脚本针对导出至 Raindrop 的使用场景进行了优化。
