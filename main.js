@@ -1,38 +1,40 @@
-function escapeCSV(field) {
-    return '"' + String(field).replace(/"/g, '""') + '"'; 
-}
+(function() {
+    var csvContent = "\uFEFFtitle,url\n"; 
+    var delay = 1000;  //等待时间，可自行修改以加快速度
 
-function get_list() {
-    var results = [];
-    $(".fav-video-list > li > a.title").each(function() {
-        var title = $(this).text().replace(/,/g, ''); 
-        if (title !== "已失效视频") {  //自动过滤已失效视频
-            var url = 'https:' + $(this).attr("href");
-            results.push(escapeCSV(title) + "," + escapeCSV(url)); 
+    function escapeCSV(field) {
+        return '"' + String(field).replace(/"/g, '""') + '"';
+    }
+
+    function collectData() {
+        $(".fav-video-list > li > a.title").each(function() {
+            var title = $(this).text().replace(/,/g, '');
+            if (title !== "已失效视频") {
+                var url = 'https:' + $(this).attr("href");
+                csvContent += escapeCSV(title) + "," + escapeCSV(url) + "\n";
+            }
+        });
+    }
+
+    function processPage() {
+        collectData();
+
+        if ($(".be-pager-next").length > 0 && $(".be-pager-next").is(":visible")) {
+            $(".be-pager-next").click();
+            setTimeout(processPage, delay);
+        } else {
+            downloadCSV();
         }
-    });
-    return results.join('\n');
-}
+    }
 
-var csvContent = "\uFEFF"; 
-csvContent += "title,url\n"; 
-
-function main() {
-    csvContent += get_list() + '\n';
-    if ($(".be-pager-next:visible").length == 0) {
+    function downloadCSV() {
         var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
         var url = URL.createObjectURL(blob);
+        var dataWindow = window.open("", "_blank");
 
-        var link = document.createElement("a");
-        link.setAttribute("href", url);
-        link.setAttribute("download", "my_favorites.csv");
-        document.body.appendChild(link);
-
-        link.click();
-    } else {
-        $(".be-pager-next").click();
-        setTimeout(main, 100); //等待时长，默认为 100，若因刷新太快导致问题，请自行修改为 1000 或更长。
+        dataWindow.document.write('<a href="' + url + '" download="bilibili_favorites.csv">Download CSV</a>');
+        dataWindow.document.querySelector('a').click();
     }
-}
 
-main();
+    processPage();
+})();
