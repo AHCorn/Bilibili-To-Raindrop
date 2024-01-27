@@ -21,44 +21,83 @@ Export the Bilibili favorites folder to a CSV file for easy transfer to Raindrop
 Press F12 on the Bilibili favorites page, or right-click the webpage and select inspect, then paste the following code into the browser console (console)
 
 ```js
-function escapeCSV(field) {
-    return '"' + String(field).replace(/"/g, '""') + '"'; 
+var delay = 2000; //等待时间
+var gen = listGen();
+var csvContent = "\uFEFF";
+csvContent += "folder,title,url\n";
+
+function getCSVFileName() {
+    var userName = $("#h-name").text();
+    return userName + "的收藏夹.csv";
 }
 
-function get_list() {
+function getFolderName() {
+    return $("#fav-createdList-container .fav-item.cur a.text").text().trim();
+}
+
+function escapeCSV(field) {
+    return '"' + String(field).replace(/"/g, '""') + '"';
+}
+
+function getVideosFromPage() {
     var results = [];
+    var folderName = getFolderName().replace(/\//g, '\\'); // Replace / with \
     $(".fav-video-list > li > a.title").each(function() {
-        var title = $(this).text().replace(/,/g, ''); 
-        if (title !== "已失效视频") {  // Automatically filter out invalid videos
+        var title = $(this).text().replace(/,/g, '');
+        if (title !== "已失效视频") {
             var url = 'https:' + $(this).attr("href");
-            results.push(escapeCSV(title) + "," + escapeCSV(url)); 
+            results.push(escapeCSV(folderName) + ',' + escapeCSV(title) + ',' + escapeCSV(url));
         }
     });
     return results.join('\n');
 }
 
-var csvContent = "\uFEFF"; 
-csvContent += "title,url\n"; 
-
-function main() {
-    csvContent += get_list() + '\n';
+function processVideos() {
+    csvContent += getVideosFromPage() + '\n'; // Add a newline after each page of videos
     if ($(".be-pager-next:visible").length == 0) {
-        var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        var url = URL.createObjectURL(blob);
-
-        var link = document.createElement("a");
-        link.setAttribute("href", url);
-        link.setAttribute("download", "my_favorites.csv");
-        document.body.appendChild(link);
-
-        link.click();
+        setTimeout(changeList, delay);
     } else {
         $(".be-pager-next").click();
-        setTimeout(main, 100); // Waiting duration, default is 100. If refresh is too fast causing issues, please adjust to 1000 or longer.
+        setTimeout(processVideos, delay);
     }
 }
 
-main();
+function* listGen() {
+    for (var list of $("#fav-createdList-container .fav-item a").get()) {
+        yield list;
+    }
+}
+
+function changeList() {
+    var list = gen.next().value;
+    if (list) {
+        list.click();
+        setTimeout(processVideos, delay);
+    } else {
+        downloadCSV();
+    }
+}
+
+function downloadCSV() {
+    var fileName = getCSVFileName();
+    var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+
+    var win = window.open();
+    if (win) {
+        win.document.open();
+        win.document.write('<html><body>');
+        win.document.write('<a href="' + url + '" download="' + fileName + '">点击下载</a>');
+        win.document.write('<script>document.querySelector("a").click();</script>');
+        win.document.write('</body></html>');
+        win.document.close();
+    } else {
+        alert('下载窗口被浏览器阻止，请先在设置里允许网页弹窗后重试。');
+    }
+}
+
+changeList();
+
 ```
 
 ### Tips
