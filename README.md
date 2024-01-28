@@ -44,7 +44,7 @@ function escapeCSV(field) {
 
 function getVideosFromPage() {
     var results = [];
-    var folderName = getFolderName().replace(/\//g, '\\'); // Replace / with \
+    var folderName = getFolderName().replace(/\//g, '\\'); // 替换 / 为 \ 避免 Raindrop 识别出错
     $(".fav-video-list > li > a.title").each(function() {
         var title = $(this).text().replace(/,/g, '');
         if (title !== "已失效视频") {
