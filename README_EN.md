@@ -21,14 +21,14 @@ Export the Bilibili favorites folder to a CSV file for easy transfer to Raindrop
 Press F12 on the Bilibili favorites page, or right-click the webpage and select inspect, then paste the following code into the browser console (console)
 
 ```js
-var delay = 2000; //等待时间
+var delay = 2000; // Waiting time
 var gen = listGen();
 var csvContent = "\uFEFF";
 csvContent += "folder,title,url\n";
 
 function getCSVFileName() {
     var userName = $("#h-name").text();
-    return userName + "的收藏夹.csv";
+    return userName + "'s Favorites.csv";
 }
 
 function getFolderName() {
@@ -87,12 +87,12 @@ function downloadCSV() {
     if (win) {
         win.document.open();
         win.document.write('<html><body>');
-        win.document.write('<a href="' + url + '" download="' + fileName + '">点击下载</a>');
+        win.document.write('<a href="' + url + '" download="' + fileName + '">Click to download.</a>');
         win.document.write('<script>document.querySelector("a").click();</script>');
         win.document.write('</body></html>');
         win.document.close();
     } else {
-        alert('下载窗口被浏览器阻止，请先在设置里允许网页弹窗后重试。');
+        alert('The download window is blocked by the browser. Please enable pop-ups in the settings and try again.');
     }
 }
 
