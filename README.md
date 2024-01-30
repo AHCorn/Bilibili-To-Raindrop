@@ -56,7 +56,7 @@ function getVideosFromPage() {
 }
 
 function processVideos() {
-    csvContent += getVideosFromPage() + '\n'; // Add a newline after each page of videos
+    csvContent += getVideosFromPage() + '\n'; // 自动换行
     if ($(".be-pager-next:visible").length == 0) {
         setTimeout(changeList, delay);
     } else {
