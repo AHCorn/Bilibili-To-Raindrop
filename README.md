@@ -23,6 +23,7 @@ Export the Bilibili favorites folder to a CSV file for easy transfer to Raindrop
 
 ## 💻 使用
 油猴脚本尚在开发，发布后会以 .user.js 格式的脚本提交至仓库。
+
 在哔哩哔哩收藏夹页面按下 F12，或右键网页选中检查，并将以下代码粘贴至浏览器控制台（console）中
 ```js
 var delay = 2000; //等待时间
