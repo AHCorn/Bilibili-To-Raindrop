@@ -22,7 +22,7 @@ Export the Bilibili favorites folder to a CSV file for easy transfer to Raindrop
 <br>
 
 ## 💻 使用
-油猴脚本尚在开发，发布后会以 .user.js 格式的脚本提交至仓库。
+如果您需要更便捷的操作，请移步包含该导出功能的[油猴脚本](https://greasyfork.org/zh-CN/scripts/487532-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%94%B6%E8%97%8F%E5%A4%B9%E5%AF%BC%E5%87%BA)。
 
 在哔哩哔哩收藏夹页面按下 F12，或右键网页选中检查，并将以下代码粘贴至浏览器控制台（console）中
 ```js
