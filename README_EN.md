@@ -1,14 +1,14 @@
 <div align="center">
 
-# 🚛 Bilibili-To-Raindrop
+![Bilibili-To-Raindrop](https://socialify.git.ci/AHCorn/Bilibili-To-Raindrop/image?description=1&descriptionEditable=Export%20the%20Bilibili%20favorites%20folder%20to%20a%20CSV%20file%20for%20easy%20transfer%20to%20Raindrop%20or%20backup.&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
 
-### <a href="https://github.com/AHCorn/Bilibili-To-Raindrop"> **简体中文** </a>  /  English 
+### <a href="https://github.com/AHCorn/Bilibili-To-Raindrop"> **简体中文** </a>  |  English 
 
 Export the Bilibili favorites folder to a CSV file for easy transfer to Raindrop or backup.
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
-
 </div>
+
+<br>
 
 ## ⭐ Features
 1. Traverse and export favorites faster.
