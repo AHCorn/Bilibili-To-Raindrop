@@ -1,13 +1,18 @@
 <div align="center">
 
-![Bilibili-To-Raindrop](https://socialify.git.ci/AHCorn/Bilibili-To-Raindrop/image?description=1&descriptionEditable=%E5%AF%BC%E5%87%BA%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%94%B6%E8%97%8F%E5%A4%B9%E8%87%B3%20CSV%20%E6%96%87%E4%BB%B6%EF%BC%8C%E4%BB%A5%E4%BE%BF%E8%BD%AC%E7%A7%BB%E8%87%B3%20Raindrop%20%E6%88%96%E5%A4%87%E4%BB%BD%E3%80%82&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
+# <img src="https://www.bilibili.com/favicon.ico" width="30" height="30" style="vertical-align: text-bottom;"> Bilibili-To-Raindrop
 
-### **简体中文** | <a href="https://github.com/AHCorn/Bilibili-To-Raindrop/blob/main/README_EN.md"> English </a> 
+### **简体中文** | <a href="https://github.com/AHCorn/Bilibili-To-Raindrop/blob/main/README_EN.md"> English </a>
 
 导出哔哩哔哩收藏夹至 CSV 文件，以便转移至 Raindrop 或备份。
 
-</div>
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![GitHub stars](https://img.shields.io/github/stars/AHCorn/Bilibili-To-Raindrop?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/AHCorn/Bilibili-To-Raindrop?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AHCorn/Bilibili-To-Raindrop?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/AHCorn/Bilibili-To-Raindrop?style=for-the-badge)
 
+</div>
 <br>
 
 ## ⭐ 特性
