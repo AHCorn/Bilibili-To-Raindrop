@@ -2,7 +2,7 @@
 
 # <img src="https://www.bilibili.com/favicon.ico" width="30" height="30" style="vertical-align: text-bottom;"> Bilibili-To-Raindrop
 
-### **简体中文** | <a href="https://github.com/AHCorn/Bilibili-To-Raindrop/blob/main/README_EN.md"> English </a>
+#### **简体中文** | <a href="https://github.com/AHCorn/Bilibili-To-Raindrop/blob/main/README_EN.md"> English </a>
 
 导出哔哩哔哩收藏夹至 CSV 文件，以便转移至 Raindrop 或备份。
 
