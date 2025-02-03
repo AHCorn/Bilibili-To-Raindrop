@@ -5,10 +5,9 @@
 #### **简体中文** | <a href="https://github.com/AHCorn/Bilibili-To-Raindrop/blob/main/README_EN.md"> English </a>
 
 
-⚠ 目前暂未适配新版页面，请先在个人主页点击返回旧版后使用（推荐在旧版页面使用[油猴脚本版](https://github.com/AHCorn/Bilibili-Favlist-Export)）
 导出哔哩哔哩收藏夹至 CSV 文件，以便转移至 Raindrop 或备份。
 
-
+⚠ 目前暂未适配新版页面，请先在个人主页点击返回旧版后使用（推荐在旧版页面使用[油猴脚本版](https://github.com/AHCorn/Bilibili-Favlist-Export)）
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![GitHub stars](https://img.shields.io/github/stars/AHCorn/Bilibili-To-Raindrop?style=for-the-badge)
